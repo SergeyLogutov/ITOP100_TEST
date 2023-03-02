@@ -1,0 +1,20 @@
+<div class="currency-converter">
+
+  <div class="converter-row">
+    <div class="converter-col">
+
+      <input type="number" [(ngModel)]="fromValue" (ngModelChange)="convertFrom()">
+      <select [(ngModel)]="fromCurrency" (ngModelChange)="convertFrom()">
+        <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+      </select>
+    </div>
+
+    <div class="converter-col">
+
+      <input type="number" [(ngModel)]="toValue" (ngModelChange)="convertTo()">
+      <select [(ngModel)]="toCurrency" (ngModelChange)="convertTo()">
+        <option *ngFor="let currency of currencies" [value]="currency" [selected]="currency === 'EUR'">{{currency}}</option>
+      </select>
+    </div>
+  </div>
+</div>
